@@ -1,3 +1,11 @@
+"""
+Code by Ricardo Musch - February 2020
+
+Get the latest release at:
+https://github.com/RicardoMusch/rtm-tk-nuke-lut-app
+"""
+
+
 import nuke
 import os
 import sgtk
