@@ -1,3 +1,5 @@
+![Registered Luts on startup](https://github.com/RicardoMusch/rtm-tk-nuke-lut-app/blob/master/screenshots/scr1.JPG?raw=true)
+
 # Installation
 
 ## 1) Add to app_locations.yml  
