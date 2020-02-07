@@ -1,6 +1,7 @@
 # Installation
 
-## 1) Add to app_locations.yml
+## 1) Add to app_locations.yml  
+Make sure to check for the latest git release and change the version tag accordingly!
 
     apps.rtm-tk-nuke-lut-app.location:
       type: git
