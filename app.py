@@ -78,7 +78,7 @@ class StgkStarterApp(Application):
         menu_callback = lambda : loadLut()
 
         # now register the command with the engine
-        self.engine.register_command("Load LUT...", menu_callback)
+        self.engine.register_command("Load Viewer LUT...", menu_callback)
 
         # Callbacks
         nuke.addOnScriptSave(loadLut())
