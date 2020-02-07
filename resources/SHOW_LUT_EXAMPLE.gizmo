@@ -1,0 +1,65 @@
+#! C:/Program Files/Nuke11.3v6/nuke-11.3.6.dll -nx
+version 11.3 v6
+Gizmo {
+ addUserKnob {20 User l "TWTH LUT"}
+ addUserKnob {26 "" +STARTLINE}
+ addUserKnob {22 update l Update... T "import update_lut\n\nupdate_lut.loadLut()" +STARTLINE}
+ addUserKnob {26 ""}
+ addUserKnob {26 _1 l "SHOT CDL Values"}
+ addUserKnob {41 slope T OCIOCDLTransform1.slope}
+ addUserKnob {41 offset T OCIOCDLTransform1.offset}
+ addUserKnob {41 power T OCIOCDLTransform1.power}
+ addUserKnob {41 saturation T OCIOCDLTransform1.saturation}
+ addUserKnob {41 working_space l "working space" T OCIOCDLTransform1.working_space}
+ addUserKnob {41 disable_OCIOCDLTransform l disable T OCIOCDLTransform1.disable}
+ addUserKnob {26 ""}
+ addUserKnob {26 _2 l "SHOW LUT"}
+ addUserKnob {41 vfield_file l "vectorfield file" T Vectorfield5.vfield_file}
+ addUserKnob {41 reload -STARTLINE T Vectorfield5.reload}
+ addUserKnob {41 colorspaceIn l "colorspace in" T Vectorfield5.colorspaceIn}
+ addUserKnob {41 colorspaceOut l "colorspace out" T Vectorfield5.colorspaceOut}
+ addUserKnob {41 file_type l "file type" T Vectorfield5.file_type}
+ addUserKnob {41 interpolation -STARTLINE T Vectorfield5.interpolation}
+ addUserKnob {41 gpuExtrapolate l "GPU extrapolate" -STARTLINE T Vectorfield5.gpuExtrapolate}
+ addUserKnob {41 disable_vectorfield l disable T Vectorfield5.disable}
+ addUserKnob {26 ""}
+ addUserKnob {26 _3 l "VIEWER SETTINGS"}
+ addUserKnob {41 colorspace_in l in T Colorspace1.colorspace_in}
+ addUserKnob {41 colorspace_out l out -STARTLINE T Colorspace1.colorspace_out}
+ addUserKnob {41 swap l "swap in/out" -STARTLINE T Colorspace1.swap}
+ addUserKnob {41 disable_viewer_transform l disable T Colorspace1.disable}
+}
+ Input {
+  inputs 0
+  name Input1
+  xpos 419
+  ypos 79
+ }
+ OCIOCDLTransform {
+  working_space linear
+  name OCIOCDLTransform1
+  xpos 419
+  ypos 119
+ }
+ Vectorfield {
+  vfield_file G:/Projects/twth/editorial/publish/luts/TW_BG_06_KN06_SAT09.cube
+  version 9
+  file_type cube
+  colorspaceIn AlexaV3LogC
+  colorspaceOut rec709
+  name Vectorfield5
+  xpos 419
+  ypos 145
+ }
+ Colorspace {
+  colorspace_out sRGB
+  name Colorspace1
+  xpos 419
+  ypos 179
+ }
+ Output {
+  name Output1
+  xpos 419
+  ypos 245
+ }
+end_group
