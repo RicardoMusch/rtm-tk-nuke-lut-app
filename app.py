@@ -52,21 +52,21 @@ class StgkStarterApp(Application):
             os.makedirs(app_hook_path)
             self.logger.info("Created Hooks folder: tk-nuke/tk-nuke-lut-app")
 
-        # Copy over the update_lut.py
-        callback_script = "update_lut.py"
-        src = os.path.join(os.path.dirname(__file__), "resources", callback_script)
-        dst = os.path.join(app_hook_path, callback_script)
-        if not os.path.exists(dst):
-            shutil.copy2(src, dst)
-            self.logger.info("Copied "+callback_script+" script to hooks folder because it did not exist yet.")
+        # # Copy over the update_lut.py
+        # callback_script = "update_lut.py"
+        # src = os.path.join(os.path.dirname(__file__), "resources", callback_script)
+        # dst = os.path.join(app_hook_path, callback_script)
+        # if not os.path.exists(dst):
+        #     shutil.copy2(src, dst)
+        #     self.logger.info("Copied "+callback_script+" script to hooks folder because it did not exist yet.")
 
-        # Copy over the example init.py
-        resource = "init.py"
-        src = os.path.join(os.path.dirname(__file__), "resources", resource)
-        dst = os.path.join(app_hook_path, resource)
-        if not os.path.exists(dst):
-            shutil.copy2(src, dst)
-            self.logger.info("Copied "+resource+" script to hooks folder because it did not exist yet.")
+        # # Copy over the example init.py
+        # resource = "init.py"
+        # src = os.path.join(os.path.dirname(__file__), "resources", resource)
+        # dst = os.path.join(app_hook_path, resource)
+        # if not os.path.exists(dst):
+        #     shutil.copy2(src, dst)
+        #     self.logger.info("Copied "+resource+" script to hooks folder because it did not exist yet.")
 
 
         # Adding hook folder to Nuke Path so the custom gizmo and script can be picked up

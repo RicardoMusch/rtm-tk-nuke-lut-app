@@ -6,17 +6,6 @@ import sgtk
 luts = ["SHOW LUT", "SHOT LUT"]
 
 def update():
-    # # get the engine we are currently running in
-    # try:
-    #     current_engine = sgtk.platform.current_engine()
-    # except:
-    #     current_engine = self.engine
-
-    # # get hold of the shotgun api instance used by the engine, (or we could have created a new one)
-    # sg = current_engine.shotgun
-
-    # # Get current Context
-    # context = current_engine.context
 
     for lut in luts:
             
@@ -28,7 +17,6 @@ def update():
             viewer["viewerProcess"].setValue(lut["name"].getValue())
 
         # Run LUT Button
-        #self.logger.error("Running LUT Update Button...")
         lut["update"].execute()
         print "Running 'update' knob on the '"+lut_name+"' node"
 
@@ -46,7 +34,9 @@ def loadLut():
         # Get the Just Created Viewer Process
         lut = nuke.thisNode()
 
+        ##################################################################
         ############# ADD SHOW FUNCTION CODE HERE ########################
+        ##################################################################
         """
         Use the 'lut' var to acces the created gizmo and its knobs.
         """
@@ -76,11 +66,11 @@ def loadLut():
             lut["disable_OCIOCDLTransform"].setValue(False)
 
 
-
-        ############# END SHOW FUNCTION CODE ##############################
+        ##################################################################
+        ############# END SHOW FUNCTION CODE #############################
+        ##################################################################
 
         # Set Current and more Viewers to LUT we Created
-        #node = nuke.activeViewer().node()['viewerProcess'].setValue(lut_name)
         log("Setting all Viewers to use the Lut")
         for node in nuke.allNodes("Viewer"):
             node["viewerProcess"].setValue(lut_name)
